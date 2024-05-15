@@ -53,7 +53,7 @@ namespace Client1
                 WriteToFile(signatureFile, $"{signatureResult.Item1}\n{signatureResult.Item2}");
 
                 ///////////////////////////////////////////////////////////////////////////////////
-                byte[] messageBytes = Encoding.UTF8.GetBytes($"{n},{e},{privateKey},{signatureResult.Item1},{signatureResult.Item2}");
+                byte[] messageBytes = Encoding.UTF8.GetBytes($"{n},{e},{signatureResult.Item1},{signatureResult.Item2}");
                 await client.SendAsync(messageBytes, SocketFlags.None);
 
             }
